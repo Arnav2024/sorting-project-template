@@ -1,6 +1,14 @@
-public class InsertionSort implements Sorter {
+public class InsertionSort {
+    public static void sort(int[] array) {
+        for (int i = 1; i < array.length; i++) {
+            int key = array[i];
+            int j = i - 1;
 
-    public void sort(int[] input) {
-        System.out.println("Insertion Sort!!!");
+            while (j >= 0 && array[j] > key) {
+                array[j + 1] = array[j];
+                j--;
+            }
+            array[j + 1] = key;
+        }
     }
 }
